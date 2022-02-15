@@ -41,10 +41,18 @@ function itemsReducer(items, action) {
 export default function Home() {
   const [items, dispatch] = useReducer(itemsReducer, initialItems);
 
+  const handleAddItem = (text) => {
+    dispatch({
+      type: 'added',
+      id: items.length + 1,
+      text,
+    });
+  };
+
   return (
     <div className="Home">
       <List items={items} />
-      <Form />
+      <Form handleAddItem={handleAddItem} />
     </div>
   );
 }
