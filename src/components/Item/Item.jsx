@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Item.css';
 
-export default function Item({ item, handleEditItem }) {
+export default function Item({ item, handleEditItem, handleDeleteItem }) {
   const [isEditing, setIsEditing] = useState(false);
   let itemContent;
 
@@ -37,7 +37,9 @@ export default function Item({ item, handleEditItem }) {
     <div className="Item">
       <input type="checkbox" />
       {itemContent}
-      <button className="item-delete">Delete</button>
+      <button className="item-delete" onClick={() => handleDeleteItem(item.id)}>
+        Delete
+      </button>
     </div>
   );
 }

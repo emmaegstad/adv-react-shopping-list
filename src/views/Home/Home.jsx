@@ -56,9 +56,16 @@ export default function Home() {
     });
   };
 
+  const handleDeleteItem = (taskId) => {
+    dispatch({
+      type: 'deleted',
+      id: taskId,
+    });
+  };
+
   return (
     <div className="Home">
-      <List items={items} handleEditItem={handleEditItem} />
+      <List items={items} handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem} />
       <Form handleAddItem={handleAddItem} />
     </div>
   );
