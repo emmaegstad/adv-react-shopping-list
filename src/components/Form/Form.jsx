@@ -19,7 +19,7 @@ export default function Form({ handleAddItem }) {
         onChange={(e) => setNewItem(e.target.value)}
       />
       <button type="submit" className="form-button">
-        Add Item
+        Add +
       </button>
     </form>
   );

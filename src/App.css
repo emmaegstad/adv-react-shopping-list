@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&family=Work+Sans:wght@100;300;500&display=swap');
+
+/* font-family: 'Moo Lah Lah', cursive;
+font-family: 'Work Sans', sans-serif; */
+
 body {
-  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #90dbf4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Work Sans', sans-serif;
+}
+
+input {
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5vh;
+  background-color: #ffcfd2;
+  font-family: monospace;
+  font-size: 0.95vh;
+  color: grey;
+  text-transform: lowercase;
+  filter: drop-shadow(1px 1px 1px #ffcfd2);
+}
+
+button:hover {
+  filter: drop-shadow(1px 1px 1px grey);
+}
+
+button:active {
+  filter: drop-shadow(1px 1px 2px grey);
 }

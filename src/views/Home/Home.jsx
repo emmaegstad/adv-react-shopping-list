@@ -65,6 +65,7 @@ export default function Home() {
 
   return (
     <div className="Home">
+      <h1 className="home-title">Grocery List</h1>
       <List items={items} handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem} />
       <Form handleAddItem={handleAddItem} />
     </div>
