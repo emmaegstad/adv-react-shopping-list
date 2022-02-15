@@ -43,7 +43,7 @@ export default function Home() {
 
   return (
     <div className="Home">
-      <List />
+      <List items={items} />
       <Form />
     </div>
   );
