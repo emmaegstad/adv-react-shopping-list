@@ -1,0 +1,9 @@
+.Item {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+}
+
+.Item button {
+  height: 2vh;
+}
