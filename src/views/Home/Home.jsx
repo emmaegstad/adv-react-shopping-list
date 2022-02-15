@@ -49,9 +49,16 @@ export default function Home() {
     });
   };
 
+  const handleEditItem = (task) => {
+    dispatch({
+      type: 'edited',
+      task,
+    });
+  };
+
   return (
     <div className="Home">
-      <List items={items} />
+      <List items={items} handleEditItem={handleEditItem} />
       <Form handleAddItem={handleAddItem} />
     </div>
   );
