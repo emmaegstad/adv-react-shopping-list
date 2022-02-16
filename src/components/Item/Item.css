@@ -1,0 +1,11 @@
+.Item {
+  display: flex;
+  align-items: center;
+  gap: 1vh;
+  color: #66a0f1;
+  font-weight: 500;
+}
+
+.edit-input-label {
+  display: none;
+}
