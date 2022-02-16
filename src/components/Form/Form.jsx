@@ -12,8 +12,12 @@ export default function Form({ handleAddItem }) {
 
   return (
     <form className="Form" onSubmit={handleSubmit}>
+      <label className="form-input-label" htmlFor="form-input">
+        Form Input
+      </label>
       <input
         type="text"
+        id="form-input"
         className="form-input"
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}

@@ -8,7 +8,11 @@ export default function Item({ item, handleEditItem, handleDeleteItem }) {
   if (isEditing) {
     itemContent = (
       <>
+        <label className="edit-input-label" htmlFor="edit-input">
+          Edit Input
+        </label>
         <input
+          id="edit-input"
           value={item.text}
           onChange={(e) => {
             handleEditItem({
@@ -17,7 +21,11 @@ export default function Item({ item, handleEditItem, handleDeleteItem }) {
             });
           }}
         />
-        <button className="item-save" onClick={() => setIsEditing(false)}>
+        <button
+          className="item-save"
+          data-testid={`save-${item.id}`}
+          onClick={() => setIsEditing(false)}
+        >
           Save
         </button>
       </>
@@ -28,7 +36,11 @@ export default function Item({ item, handleEditItem, handleDeleteItem }) {
         <p className="item-text" style={{ textDecoration: item.done ? 'line-through' : null }}>
           {item.text}
         </p>
-        <button className="item-edit" onClick={() => setIsEditing(true)}>
+        <button
+          className="item-edit"
+          data-testid={`edit-${item.id}`}
+          onClick={() => setIsEditing(true)}
+        >
           Edit
         </button>
       </>
@@ -36,7 +48,7 @@ export default function Item({ item, handleEditItem, handleDeleteItem }) {
   }
 
   return (
-    <div className="Item">
+    <li className="Item">
       <input
         type="checkbox"
         checked={item.done}
@@ -48,9 +60,13 @@ export default function Item({ item, handleEditItem, handleDeleteItem }) {
         }}
       />
       {itemContent}
-      <button className="item-delete" onClick={() => handleDeleteItem(item.id)}>
+      <button
+        className="item-delete"
+        data-testid={item.id}
+        onClick={() => handleDeleteItem(item.id)}
+      >
         Delete
       </button>
-    </div>
+    </li>
   );
 }

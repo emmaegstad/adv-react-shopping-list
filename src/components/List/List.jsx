@@ -4,7 +4,7 @@ import Item from '../Item/Item';
 
 export default function List({ items, handleEditItem, handleDeleteItem }) {
   return (
-    <div className="List">
+    <ul className="List">
       {items.map((item) => {
         return (
           <Item
@@ -15,6 +15,6 @@ export default function List({ items, handleEditItem, handleDeleteItem }) {
           />
         );
       })}
-    </div>
+    </ul>
   );
 }
