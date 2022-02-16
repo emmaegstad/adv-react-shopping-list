@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&family=Work+Sans:wght@100;300;500&display=swap');
 
-/* font-family: 'Moo Lah Lah', cursive;
-font-family: 'Work Sans', sans-serif; */
-
 body {
   display: flex;
   flex-direction: column;
