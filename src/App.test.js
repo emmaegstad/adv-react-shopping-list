@@ -63,3 +63,17 @@ test('save button will update list item', () => {
 
   expect(screen.getByText(/cereal/i)).toBeInTheDocument();
 });
+
+test('clear button will clear all list items', () => {
+  render(<App />);
+  const oatMilk = screen.getByText(/oat milk/i);
+  const parmesanCrisps = screen.getByText(/parmesan crisps/i);
+  const lacinatoKale = screen.getByText(/lacinato kale/i);
+
+  const clearButton = screen.getByRole('button', { name: /clear-button/i });
+  userEvent.click(clearButton);
+
+  expect(oatMilk).not.toBeInTheDocument();
+  expect(parmesanCrisps).not.toBeInTheDocument();
+  expect(lacinatoKale).not.toBeInTheDocument();
+});

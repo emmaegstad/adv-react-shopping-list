@@ -65,10 +65,10 @@ const ItemProvider = ({ children }) => {
     });
   };
 
-  const handleClearAll = (items) => {
+  const handleClearAll = () => {
     dispatch({
       type: 'cleared',
-      items,
+      //   items,
     });
   };
 
