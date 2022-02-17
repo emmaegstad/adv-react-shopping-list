@@ -28,6 +28,9 @@ function itemsReducer(items, action) {
         return item;
       });
     }
+    case 'cleared': {
+      return (items = []);
+    }
     case 'deleted': {
       return items.filter((item) => item.id !== action.id);
     }
@@ -62,6 +65,13 @@ const ItemProvider = ({ children }) => {
     });
   };
 
+  const handleClearAll = (items) => {
+    dispatch({
+      type: 'cleared',
+      items,
+    });
+  };
+
   return (
     <ItemContext.Provider
       value={{
@@ -69,6 +79,7 @@ const ItemProvider = ({ children }) => {
         handleAddItem,
         handleEditItem,
         handleDeleteItem,
+        handleClearAll,
       }}
     >
       {children}

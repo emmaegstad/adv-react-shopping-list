@@ -1,5 +1,6 @@
 import { useItems } from '../../context/ItemContext';
 import './Home.css';
+import Header from '../../components/Header/Header';
 import List from '../../components/List/List';
 import Form from '../../components/Form/Form';
 
@@ -8,8 +9,10 @@ export default function Home() {
 
   return (
     <div className="Home">
-      <h1 className="home-title">Grocery List</h1>
-      <List items={items} handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem} />
+      <Header />
+      {items.length > 0 && (
+        <List items={items} handleEditItem={handleEditItem} handleDeleteItem={handleDeleteItem} />
+      )}
       <Form handleAddItem={handleAddItem} />
     </div>
   );
