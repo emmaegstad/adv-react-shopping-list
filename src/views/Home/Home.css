@@ -1,0 +1,11 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #8eecf5;
+  filter: drop-shadow(2px 2px 1px #8eecf5);
+  margin-top: 20vh;
+  border-radius: 25px;
+  padding: 4vh;
+}

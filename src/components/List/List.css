@@ -1,0 +1,6 @@
+.List {
+  padding: 4vh;
+  background-color: #98f5e1;
+  filter: drop-shadow(2px 2px 1px #98f5e1);
+  border-radius: 25px;
+}

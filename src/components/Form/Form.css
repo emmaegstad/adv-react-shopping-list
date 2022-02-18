@@ -1,0 +1,9 @@
+.Form {
+  display: flex;
+  gap: 2vh;
+  padding-top: 4vh;
+}
+
+.form-input-label {
+  display: none;
+}
