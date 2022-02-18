@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const ItemContext = createContext();
 
@@ -41,7 +42,12 @@ function itemsReducer(items, action) {
 }
 
 const ItemProvider = ({ children }) => {
-  const [items, dispatch] = useReducer(itemsReducer, initialItems);
+  const [storedItems, setStoredItems] = useLocalStorage('ITEMS', initialItems);
+  const [items, dispatch] = useReducer(itemsReducer, storedItems);
+
+  useEffect(() => {
+    setStoredItems(items);
+  }, [items, setStoredItems]);
 
   const handleAddItem = (text) => {
     dispatch({
@@ -80,6 +86,7 @@ const ItemProvider = ({ children }) => {
         handleEditItem,
         handleDeleteItem,
         handleClearAll,
+        setStoredItems,
       }}
     >
       {children}
